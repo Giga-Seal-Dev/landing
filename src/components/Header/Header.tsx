@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button from '../Button';
 import NavButton from './NavButton';
 
 export default function Header() {
