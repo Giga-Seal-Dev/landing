@@ -1,7 +1,7 @@
 type PropsType = {
 	children: string;
 	type: string;
-	link: string;
+	link?: string;
 };
 
 export default function Button({ children, type, link }: PropsType) {
