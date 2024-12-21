@@ -6,7 +6,7 @@ type PropsType = {
 
 export default function Button({ children, type, link }: PropsType) {
 	return (
-		<div className='bg-gradient-to-r from-accent via-[#ff5500] via-80% to-secondary rounded-xl'>
+		<div className='bg-gradient-to-r from-accent via-accent via-60% to-secondary rounded-xl'>
 			<button
 				className={`rounded-xl px-6 leading-10 border-2 border-transparent font-medium
 					${
@@ -21,7 +21,7 @@ export default function Button({ children, type, link }: PropsType) {
 					className={`
 						${
 							type === 'transparent'
-								? 'bg-gradient-to-r from-accent via-[#ff5500] via-80% to-secondary bg-clip-text text-transparent'
+								? 'bg-gradient-to-r from-accent via-accent via-60% to-secondary bg-clip-text text-transparent'
 								: ''
 						}`}
 				>
