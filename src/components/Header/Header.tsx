@@ -1,15 +1,14 @@
+import logo from '../../assets/logo.svg';
 import Button from '../Button';
 import NavButton from './NavButton';
 
 export default function Header() {
 	return (
 		<div className='flex items-center justify-between w-full h-16 px-12 bg-primaryLight'>
-			<div>
-				<a>
-					<img src='' alt='logo' />
-					logo
-				</a>
-			</div>
+			<a href='#' className='flex items-center'>
+				<img src={logo} alt='logo' className='size-12' />
+				<p className='text-2xl text-accent'>Repetilum</p>
+			</a>
 			<div className='flex items-center gap-16'>
 				<nav className='flex justify-center text-lg'>
 					<ul className='flex gap-x-6 lg:gap-x-12'>
