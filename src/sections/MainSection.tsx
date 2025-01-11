@@ -4,8 +4,8 @@ import learn from "../assets/Learning-cuate.svg";
 import { motion } from "motion/react";
 export default function MainSection() {
   return (
-    <section className=" text-white bg-darkGreen px-12 flex justify-center h-screen -mt-20">
-      <div className="flex flex-col md:flex-row md:container min-mobile:px-10 items-center self-center justify-between md:h-screen min-mobile:py-32 ">
+    <section className=" text-white bg-darkGreen px-12 flex justify-center h-screen md:-mt-20">
+      <div className="flex flex-col md:flex-row md:container min-mobile:px-10 items-center self-center justify-between h-screen min-mobile:py-32 ">
         <div className="flex flex-col w-full md:w-1/2 space-y-5">
           <motion.h1
             transition={{ duration: 0.6, delay: 0 }}
