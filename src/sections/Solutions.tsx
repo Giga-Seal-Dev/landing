@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 export default function Solutions() {
   return (
-    <section id="solutions">
+    <section id="solutions" className="py-10  ">
       <h2 className="text-4xl mb-7 font-semibold text-center">
         Ми пропонуємо рішення, для:
       </h2>
@@ -83,7 +83,7 @@ export default function Solutions() {
             <h3 className="text-2xl font-semibold mb-3 text-secondary">
               Онлайн-курсів та шкіл
             </h3>
-            <ul className="marker:text-secondary flex flex-col space-y-5 *:text-pretty *:text-lg list-disc pl-5">
+            <ul className="marker:text-secondary flex flex-col space-y-5 *:text-pretty *:text-lg list-disc pl-5 ">
               <li className="">
                 Можливість створити професійний вигляд курсу з вбудованими
                 інструментами для аналітики та зворотного зв’язку.

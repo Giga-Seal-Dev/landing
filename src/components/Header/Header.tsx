@@ -20,10 +20,10 @@ export default function Header() {
           </ul>
         </nav>
         <div className="flex gap-3">
-          <Button type={"colorful"} link={"#"}>
+          <Button size="large" type={"colorful"} link={"#"}>
             Демо версія
           </Button>
-          <Button type={"transparent"} link={"#"}>
+          <Button size="large" type={"transparent"} link={"#"}>
             Зворотній зв'язок
           </Button>
         </div>
