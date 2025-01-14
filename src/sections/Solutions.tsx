@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="py-10  ">
+    <section id="solutions" className=" py-10 bg-darkGreen text-white ">
       <h2 className="text-4xl mb-7 font-semibold text-center">
         Ми пропонуємо рішення, для:
       </h2>
