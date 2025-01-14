@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+import FaqSection from "./sections/FaqSection";
 import FeaturesSection from "./sections/FeaturesSection";
 import Footer from "./sections/Footer";
 import MainSection from "./sections/MainSection";
@@ -11,9 +12,8 @@ export default function App() {
       <MainSection />
       <FeaturesSection />
       <Solutions />
-
+      <FaqSection />
       <Footer />
-     
     </>
   );
 }
