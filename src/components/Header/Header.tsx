@@ -5,17 +5,7 @@ import { HeaderTextColorContext } from './HeaderContext';
 import NavButton from './NavButton';
 
 export default function Header() {
-	// const [scroll, setScroll] = useState(0);
 	const { headerTextColor } = useContext(HeaderTextColorContext);
-
-	// useEffect(() => {
-	// 	window.addEventListener('scroll', handleScroll);
-	// 	return () => window.removeEventListener('scroll', handleScroll);
-	// }, []);
-
-	// const handleScroll = () => {
-	// 	setScroll(window.scrollY + 15);
-	// };
 
 	return (
 		<div className='flex items-center sticky top-0 justify-between w-full h-20 px-12 bg-gradient-to-r from-green-500/50 to-blue-500/50 backdrop-blur-xl border-b border-b-green z-50'>

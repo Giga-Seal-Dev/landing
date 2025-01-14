@@ -7,7 +7,6 @@ type PropsType = {
 	link?: string;
 	size: 'small' | 'medium' | 'large';
 	isHeader?: boolean;
-	// scroll?: number;
 };
 
 export default function Button({
@@ -16,8 +15,7 @@ export default function Button({
 	size,
 	link = '#',
 	isHeader = false,
-}: // scroll = 0,
-PropsType) {
+}: PropsType) {
 	const { headerTextColor } = useContext(HeaderTextColorContext);
 
 	return (
