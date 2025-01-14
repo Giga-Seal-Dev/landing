@@ -1,12 +1,21 @@
+import { motion } from 'motion/react';
+import { useContext, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import corporate from '../assets/corporate.svg';
 import school from '../assets/Learning-amico.svg';
 import courses from '../assets/Studying-cuate.svg';
-
-import { motion } from 'motion/react';
+import { HeaderTextColorContext } from '../components/Header/HeaderContext';
 
 export default function Solutions() {
+	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
+	const { ref, inView } = useInView({ threshold: 0.95 });
+
+	useEffect(() => {
+		if (inView) updateHeaderTextColor('light');
+	}, [inView, updateHeaderTextColor]);
+
 	return (
-		<section id='solutions' className='py-10 scroll-my-20'>
+		<section ref={ref} id='solutions' className='py-10 scroll-my-20'>
 			<h2 className='text-4xl mb-7 font-semibold text-center'>
 				Ми пропонуємо рішення, для:
 			</h2>

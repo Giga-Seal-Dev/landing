@@ -10,7 +10,7 @@ import { IoSend } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <div className="w-full bg-darkGreen py-8 text-gray-300 text-sm">
+    <footer className="w-full bg-darkGreen py-8 text-gray-300 text-sm">
       <div className="container mx-auto flex justify-between">
         <div className="flex justify-center items-center flex-col space-y-4">
           <motion.img
@@ -44,7 +44,7 @@ export default function Footer() {
         </div>
 
         <div className="flex justify-start space-y-2 flex-col">
-        <h3 className="font-semibold">Контакти:</h3>
+          <h3 className="font-semibold">Контакти:</h3>
           <a
             href="mailto:support@example.com"
             className="flex items-center hover:underline hover:text-white"
@@ -101,6 +101,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

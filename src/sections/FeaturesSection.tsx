@@ -1,12 +1,38 @@
+import { motion } from 'motion/react';
+import { useContext, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { HeaderTextColorContext } from '../components/Header/HeaderContext';
 import IntegrationsTile from '../components/IntegrationsTile';
 
-import { motion } from 'motion/react';
 type IntegraionsType = {
 	name: string;
 	iconPath: string;
 };
 
+type CardInfoType = {
+	title: string;
+	text: string;
+};
+
 export default function FeaturesSection() {
+	const cardInfo: CardInfoType[] = [
+		{
+			title: 'Статистика та аналітика',
+			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptate debitis dolore expedita non commodi quia saepe delectus cupiditate nostrum?',
+		},
+		{
+			title: 'Кросплатформерність',
+			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptate debitis dolore expedita non commodi quia saepe delectus cupiditate nostrum?',
+		},
+		{
+			title: 'Створення сертифікатів',
+			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptate debitis dolore expedita non commodi quia saepe delectus cupiditate nostrum?',
+		},
+		{
+			title: 'Вбудований конструктор курсів',
+			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi voluptate debitis dolore expedita non commodi quia saepe delectus cupiditate nostrum?',
+		},
+	];
 	const integragionsList: IntegraionsType[] = [
 		{ name: 'Zoom', iconPath: '/assets/integrations_icons/zoom.png' },
 		{
@@ -30,86 +56,47 @@ export default function FeaturesSection() {
 		{ name: 'Monobank', iconPath: '/assets/integrations_icons/monobank.png' },
 	];
 
+	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
+	const { ref, inView } = useInView({ threshold: 0.95 });
+
+	useEffect(() => {
+		if (inView) updateHeaderTextColor('light');
+	}, [inView, updateHeaderTextColor]);
+
 	return (
 		<section
+			ref={ref}
 			id='features'
-			className='min-h-screen flex flex-col gap-y-4 items-center py-10 content-center text-neutral-800 scroll-my-20'
+			className='min-h-screen flex flex-col gap-y-16 items-center pt-16 px-4 bg-primaryLight text-neutral-800 relative scroll-my-20'
 		>
 			<div className='container'>
 				<h2 className='text-4xl mb-7 font-semibold text-center'>
 					Чому треба обрати саме нашу платформу?
 				</h2>
 				<div className='container flex justify-center gap-x-6'>
-					<div className='w-1/2 flex flex-col items-end gap-y-3'>
-						<motion.div
-							initial={{ opacity: 0, x: -50 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.6 }}
-							className='flex flex-col gap-y-4 p-8 border shadow-lg w-5/6 rounded-xl border-l-8 border-l-accent'
-						>
-							<h3 className='text-xl font-bold text-center'>
-								Статистика та аналітика
-							</h3>
-							<p className='mt-1'>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-								voluptate debitis dolore expedita non commodi quia saepe
-								delectus cupiditate nostrum?
-							</p>
-						</motion.div>
-
-						<motion.div
-							initial={{ opacity: 0, x: -50 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.6 }}
-							className='flex flex-col gap-y-4 p-8 border shadow-lg w-5/6 rounded-xl border-l-8 border-l-accent'
-						>
-							<h3 className='text-xl font-bold text-center'>
-								Кросплатформерність
-							</h3>
-							<p className='mt-1'>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-								voluptate debitis dolore expedita non commodi quia saepe
-								delectus cupiditate nostrum?
-							</p>
-						</motion.div>
-						<motion.div
-							initial={{ opacity: 0, x: -50 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.6 }}
-							className='flex flex-col gap-y-4 p-8 border shadow-lg w-5/6 rounded-xl border-l-8 border-l-accent'
-						>
-							<h3 className='text-xl font-bold text-center'>
-								Створення сертифікатів
-							</h3>
-							<p className='mt-1'>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-								voluptate debitis dolore expedita non commodi quia saepe
-								delectus cupiditate nostrum?
-							</p>
-						</motion.div>
-					</div>
-					<div className='w-1/2 h-auto'>
-						<motion.div
-							initial={{ opacity: 0, x: -50 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.6 }}
-							className='flex flex-col gap-y-4 p-8 border shadow-lg w-5/6 h-full rounded-xl border-l-8 border-l-accent justify-center'
-						>
-							<h3 className='text-xl font-bold text-center'>
-								Вбудований конструктор курсів
-							</h3>
-							<p className='mt-1'>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-								voluptate debitis dolore expedita non commodi quia saepe
-								delectus cupiditate nostrum?
-							</p>
-						</motion.div>
+					<div className='w-full flex flex-wrap items-center justify-center gap-y-2 gap-x-4'>
+						{cardInfo.map((item, index) => (
+							<motion.div
+								key={index}
+								initial={{ opacity: 0, x: index % 2 == 0 ? -50 : 50 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.6 }}
+								className='flex flex-col gap-y-4 p-8 bg-white border shadow-md rounded-xl w-5/12 border-l-8 border-l-accent transition-transform duration-300 flex-shrink-0'
+							>
+								<h3 className='text-xl font-semibold text-center text-darkGreen'>
+									{item.title}
+								</h3>
+								<p className='mt-1 text-neutral-600'>{item.text}</p>
+							</motion.div>
+						))}
 					</div>
 				</div>
 			</div>
 			<div className='w-full flex flex-col font-bold py-8'>
-				<h3 className='text-xl text-center'>Інтеграції</h3>
-				<div className='flex flex-wrap mt-3 leading-relaxed relative gap-5 justify-center'>
+				<h3 className='text-2xl text-center text-darkGreen'>
+					Інтеграції таких сервісів як:
+				</h3>
+				<div className='flex flex-wrap mt-3 gap-5 justify-center'>
 					{integragionsList.map((item, index) => (
 						<IntegrationsTile key={index} icon={item.iconPath}>
 							{item.name}
