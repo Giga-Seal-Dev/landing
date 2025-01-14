@@ -1,7 +1,6 @@
 import Dropdown from "../components/Dropdown";
 import faq from "../assets/faq.svg";
 import Button from "../components/Button";
-import { motion } from "motion/react";
 
 const dropHeadings = [
   "Що таке LMS і як вона працює?",
