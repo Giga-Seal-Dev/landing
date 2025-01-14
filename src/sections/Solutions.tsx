@@ -8,7 +8,7 @@ import { HeaderTextColorContext } from '../components/Header/HeaderContext';
 
 export default function Solutions() {
 	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
-	const { ref, inView } = useInView({ threshold: 0.7 });
+	const { ref, inView } = useInView({ threshold: 0.95 });
 
 	useEffect(() => {
 		if (inView) updateHeaderTextColor('light');

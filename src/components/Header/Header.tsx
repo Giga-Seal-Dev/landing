@@ -24,22 +24,10 @@ export default function Header() {
 					</ul>
 				</nav>
 				<div className='flex gap-3'>
-					<Button
-						size='large'
-						type={'colorful'}
-						link={'#'}
-						isHeader={true}
-						// scroll={scroll}
-					>
+					<Button size='large' type={'colorful'} link={'#'} isHeader={true}>
 						Демо версія
 					</Button>
-					<Button
-						size='large'
-						type={'transparent'}
-						link={'#'}
-						isHeader={true}
-						// scroll={scroll}
-					>
+					<Button size='large' type={'transparent'} link={'#'} isHeader={true}>
 						Зворотній зв'язок
 					</Button>
 				</div>

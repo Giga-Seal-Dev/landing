@@ -34,7 +34,7 @@ export default function FeaturesSection() {
 	];
 
 	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
-	const { ref, inView } = useInView({ threshold: 0.7 });
+	const { ref, inView } = useInView({ threshold: 0.95 });
 
 	useEffect(() => {
 		if (inView) updateHeaderTextColor('light');
