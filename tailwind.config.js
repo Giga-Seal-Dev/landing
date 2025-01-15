@@ -10,7 +10,6 @@ export default {
         accent: "#5fc456",
         darkGreen: "#293435",
         green: "#2de09a",
-        purple: "#6d6eaf ",
       },
       fontFamily: {
         sans: ["Montserrat", "sans-serif"],

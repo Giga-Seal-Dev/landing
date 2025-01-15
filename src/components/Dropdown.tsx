@@ -12,7 +12,9 @@ export default function Dropdown({ heading, text }: dropdownProps) {
 
   return (
     <div className="w-full flex flex-col justify-between p-4 border-b border-gray-300">
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
         className="flex w-full justify-between items-center cursor-pointer"
         onClick={() => setActive(!active)}
       >
@@ -26,7 +28,7 @@ export default function Dropdown({ heading, text }: dropdownProps) {
             <FaPlus className="text-2xl text-accent" />
           </motion.div>
         )}
-      </div>
+      </motion.div>
 
       <div
         className={`mt-2 transition-all duration-300 ${
