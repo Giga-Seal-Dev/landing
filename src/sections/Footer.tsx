@@ -10,7 +10,7 @@ import { IoSend } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-darkGreen py-8 text-gray-300 text-sm z-20 relative">
+    <footer className="w-full bg-darkGreen py-8 text-gray-300 text-sm relative">
       <div className="container mx-auto flex justify-between">
         <div className="flex justify-center items-center flex-col space-y-4">
           <motion.img

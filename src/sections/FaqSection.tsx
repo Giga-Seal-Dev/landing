@@ -24,7 +24,7 @@ const dropTexts = [
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="bg-primaryLight text-black py-10 relative">
+    <section id="faq" className=" py-10 relative bg-darkGreen text-white">
       <div className="w-[400px] h-[400px] rounded-full z-10 opacity-10 bg-accent absolute -bottom-[100px]  -left-[100px]"></div>
       <div className="container mx-auto flex flex-col space-y-4">
         <h2 className="text-4xl mb-7 font-semibold text-center">
