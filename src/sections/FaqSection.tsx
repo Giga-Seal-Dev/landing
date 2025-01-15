@@ -1,6 +1,9 @@
 import Dropdown from "../components/Dropdown";
 import faq from "../assets/faq.svg";
 import Button from "../components/Button";
+import { useContext, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { HeaderTextColorContext } from "../components/Header/HeaderContext";
 
 const dropHeadings = [
   "Що таке LMS і як вона працює?",
@@ -23,8 +26,18 @@ const dropTexts = [
 ];
 
 export default function FaqSection() {
+  const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
+  const { ref, inView } = useInView({ threshold: 0.7 });
+
+  useEffect(() => {
+    if (inView) updateHeaderTextColor("dark");
+  }, [inView, updateHeaderTextColor]);
   return (
-    <section id="faq" className=" py-10 relative bg-darkGreen text-white">
+    <section
+      id="faq"
+      className=" py-10 relative bg-darkGreen text-white"
+      ref={ref}
+    >
       <div className="w-[400px] h-[400px] rounded-full z-10 opacity-10 bg-accent absolute -bottom-[100px]  -left-[100px]"></div>
       <div className="container mx-auto flex flex-col space-y-4">
         <h2 className="text-4xl mb-7 font-semibold text-center">
