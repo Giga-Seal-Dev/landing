@@ -1,19 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import logo from '../../assets/logo.svg';
 import Button from '../Button';
+import { HeaderTextColorContext } from './HeaderContext';
 import NavButton from './NavButton';
 
 export default function Header() {
-	const [scroll, setScroll] = useState(0);
-
-	useEffect(() => {
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
-
-	const handleScroll = () => {
-		setScroll(window.scrollY + 15);
-	};
+	const { headerTextColor } = useContext(HeaderTextColorContext);
 
 	return (
 		<div className='flex items-center sticky top-0 justify-between w-full h-20 px-12 bg-gradient-to-r from-green-500/50 to-blue-500/50 backdrop-blur-xl border-b border-b-green z-50'>
@@ -22,13 +14,7 @@ export default function Header() {
 				<p className='text-2xl text-green'>Repetilum</p>
 			</a>
 			<div className='flex items-center gap-16'>
-				<nav
-					className={`flex justify-center text-lg ${
-						scroll > document.documentElement.clientHeight
-							? 'text-black'
-							: 'text-white'
-					}`}
-				>
+				<nav className={`flex justify-center text-lg ${headerTextColor}`}>
 					<ul className='flex gap-x-6 lg:gap-x-12'>
 						<NavButton id={'aboutUs'}>Про нас</NavButton>
 						<NavButton id={'price'}>Ціни</NavButton>
@@ -43,7 +29,7 @@ export default function Header() {
 						type={'colorful'}
 						link={'#'}
 						isHeader={true}
-						scroll={scroll}
+						// scroll={scroll}
 					>
 						Демо версія
 					</Button>
@@ -52,7 +38,7 @@ export default function Header() {
 						type={'transparent'}
 						link={'#'}
 						isHeader={true}
-						scroll={scroll}
+						// scroll={scroll}
 					>
 						Зворотній зв'язок
 					</Button>

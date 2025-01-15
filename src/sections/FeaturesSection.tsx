@@ -1,37 +1,48 @@
-import IntegrationsTile from "../components/IntegrationsTile";
-
 import { motion } from 'motion/react';
+import { useContext, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { HeaderTextColorContext } from '../components/Header/HeaderContext';
+import IntegrationsTile from '../components/IntegrationsTile';
+
 type IntegraionsType = {
-  name: string;
-  iconPath: string;
+	name: string;
+	iconPath: string;
 };
 
 export default function FeaturesSection() {
-  const integragionsList: IntegraionsType[] = [
-    { name: "Zoom", iconPath: "/assets/integrations_icons/zoom.png" },
-    {
-      name: "Google Calendar",
-      iconPath: "/assets/integrations_icons/google_calendar.png",
-    },
-    {
-      name: "Google Meet",
-      iconPath: "/assets/integrations_icons/google_meet.png",
-    },
-    {
-      name: "AI Assistant",
-      iconPath: "/assets/integrations_icons/ai.png",
-    },
-    { name: "Telegram", iconPath: "/assets/integrations_icons/telegram.png" },
-    { name: "Viber", iconPath: "/assets/integrations_icons/viber.png" },
-    {
-      name: "Stripe",
-      iconPath: "/assets/integrations_icons/stripe.png",
-    },
-    { name: "Monobank", iconPath: "/assets/integrations_icons/monobank.png" },
-  ];
+	const integragionsList: IntegraionsType[] = [
+		{ name: 'Zoom', iconPath: '/assets/integrations_icons/zoom.png' },
+		{
+			name: 'Google Calendar',
+			iconPath: '/assets/integrations_icons/google_calendar.png',
+		},
+		{
+			name: 'Google Meet',
+			iconPath: '/assets/integrations_icons/google_meet.png',
+		},
+		{
+			name: 'AI Assistant',
+			iconPath: '/assets/integrations_icons/ai.png',
+		},
+		{ name: 'Telegram', iconPath: '/assets/integrations_icons/telegram.png' },
+		{ name: 'Viber', iconPath: '/assets/integrations_icons/viber.png' },
+		{
+			name: 'Stripe',
+			iconPath: '/assets/integrations_icons/stripe.png',
+		},
+		{ name: 'Monobank', iconPath: '/assets/integrations_icons/monobank.png' },
+	];
+
+	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
+	const { ref, inView } = useInView({ threshold: 0.7 });
+
+	useEffect(() => {
+		if (inView) updateHeaderTextColor('light');
+	}, [inView, updateHeaderTextColor]);
 
 	return (
 		<section
+			ref={ref}
 			id='features'
 			className='h-screen flex flex-wrap items-center content-center py-8 px-12 bg-primaryLight text-neutral-800 text-center gap-y-5'
 		>
