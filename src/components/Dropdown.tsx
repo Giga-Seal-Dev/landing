@@ -11,6 +11,7 @@ export default function Dropdown({ heading, text }: dropdownProps) {
   const [active, setActive] = useState(false);
 
   return (
+
     <div className="w-full flex flex-col justify-between p-4 border-b border-gray-300 ">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -18,6 +19,7 @@ export default function Dropdown({ heading, text }: dropdownProps) {
         className={`flex w-full justify-between items-center cursor-pointer hover:text-accent ${
           active ? "text-accent" : "text-white"
         }`}
+
         onClick={() => setActive(!active)}
       >
         <h3 className="text-lg font-medium">{heading}</h3>
