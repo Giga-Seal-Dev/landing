@@ -14,7 +14,7 @@ export default function Header() {
 				<p className='text-2xl text-green'>Repetilum</p>
 			</a>
 			<div className='flex items-center gap-16'>
-				<nav className={`flex justify-center text-lg ${headerTextColor}`}>
+				<nav className={`flex justify-center text-lg text-${headerTextColor}`}>
 					<ul className='flex gap-x-6 lg:gap-x-12'>
 						<NavButton id={'aboutUs'}>Про нас</NavButton>
 						<NavButton id={'price'}>Ціни</NavButton>
@@ -24,22 +24,10 @@ export default function Header() {
 					</ul>
 				</nav>
 				<div className='flex gap-3'>
-					<Button
-						size='large'
-						type={'colorful'}
-						link={'#'}
-						isHeader={true}
-						// scroll={scroll}
-					>
+					<Button size='large' type={'colorful'} link={'#'} isHeader={true}>
 						Демо версія
 					</Button>
-					<Button
-						size='large'
-						type={'transparent'}
-						link={'#'}
-						isHeader={true}
-						// scroll={scroll}
-					>
+					<Button size='large' type={'transparent'} link={'#'} isHeader={true}>
 						Зворотній зв'язок
 					</Button>
 				</div>

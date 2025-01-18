@@ -1,13 +1,14 @@
-import { useInView } from "react-intersection-observer";
-import learn from "../assets/Learning-cuate.svg";
-import Button from "../components/Button";
+import { motion } from 'motion/react';
+import { useContext, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import learn from '../assets/Learning-cuate.svg';
+import Button from '../components/Button';
+import { HeaderTextColorContext } from '../components/Header/HeaderContext';
 
-import { motion } from "motion/react";
-import { useContext, useEffect } from "react";
-import { HeaderTextColorContext } from "../components/Header/HeaderContext";
 export default function MainSection() {
-  const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
-  const { ref, inView } = useInView({ threshold: 0.7 });
+	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
+	const { ref, inView } = useInView({ threshold: 0.05 });
+    
   useEffect(() => {
     if (inView) updateHeaderTextColor("dark");
   }, [inView, updateHeaderTextColor]);

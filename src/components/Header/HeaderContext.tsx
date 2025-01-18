@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState } from 'react';
 
 export type HeaderTextColorContextType = {
@@ -9,7 +10,7 @@ type PropsType = {
 	children: React.ReactNode;
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 export const HeaderTextColorContext = createContext<HeaderTextColorContextType>(
 	{
 		headerTextColor: '',
@@ -21,7 +22,7 @@ export const HeaderTextColorProvider = ({ children }: PropsType) => {
 	const [headerTextColor, setHeaderTextColor] = useState<string>('');
 
 	const updateHeaderTextColor = (bgColor: string) => {
-		setHeaderTextColor(bgColor === 'dark' ? 'text-white' : 'text-black');
+		setHeaderTextColor(bgColor === 'dark' ? 'white' : 'black');
 	};
 
 	return (
