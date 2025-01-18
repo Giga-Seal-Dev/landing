@@ -1,8 +1,5 @@
 import { motion } from 'motion/react';
-import { useContext, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
 import features from '../assets/Features Overview-amico.svg';
-import { HeaderTextColorContext } from '../components/Header/HeaderContext';
 import IntegrationsTile from '../components/IntegrationsTile';
 
 type IntegraionsType = {
@@ -57,18 +54,10 @@ export default function FeaturesSection() {
 		{ name: 'Monobank', iconPath: '/assets/integrations_icons/monobank.png' },
 	];
 
-	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
-	const { ref, inView } = useInView({ threshold: 0.95 });
-
-	useEffect(() => {
-		if (inView) updateHeaderTextColor('light');
-	}, [inView, updateHeaderTextColor]);
-
 	return (
 		<section
-			ref={ref}
 			id='features'
-			className='min-h-screen flex flex-col gap-y-16 items-center pt-16 px-4 bg-primaryLight text-neutral-800 relative scroll-my-20'
+			className='min-h-screen flex flex-col gap-y-16 items-center pt-10 px-4 bg-primaryLight bg-[url(./assets/layered-waves-haikei.svg)] bg-cover bg-center bg-no-repeat text-neutral-800 relative scroll-my-20'
 		>
 			<div className='container'>
 				<h2 className='text-4xl mb-7 font-semibold text-center'>
@@ -107,7 +96,7 @@ export default function FeaturesSection() {
 				</div>
 			</div>
 			<div className='w-full flex flex-col font-bold py-8'>
-				<h3 className='text-2xl text-center text-darkGreen'>
+				<h3 className='text-2xl text-center [text-shadow:_3px_3px_2px_rgba(41,52,53,0.8)] text-primaryLight'>
 					Інтеграції таких сервісів як:
 				</h3>
 				<div className='flex flex-wrap mt-3 gap-5 justify-center'>
