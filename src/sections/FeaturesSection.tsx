@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useContext, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
+import features from '../assets/Features Overview-amico.svg';
 import { HeaderTextColorContext } from '../components/Header/HeaderContext';
 import IntegrationsTile from '../components/IntegrationsTile';
 
@@ -73,20 +74,33 @@ export default function FeaturesSection() {
 				<h2 className='text-4xl mb-7 font-semibold text-center'>
 					Чому треба обрати саме нашу платформу?
 				</h2>
-				<div className='container flex justify-center gap-x-6'>
-					<div className='w-full flex flex-wrap items-center justify-center gap-y-2 gap-x-4'>
+				<div className='container flex justify-center'>
+					<div className='w-full hidden lg:flex lg:w-1/2 items-center justify-center'>
+						<img
+							src={features}
+							alt='features image'
+							className='max-w-[600px]'
+						/>
+					</div>
+					<div className='w-1/2 flex flex-wrap justify-center gap-y-2 gap-x-4 h-full'>
 						{cardInfo.map((item, index) => (
 							<motion.div
 								key={index}
-								initial={{ opacity: 0, x: index % 2 == 0 ? -50 : 50 }}
+								initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6 }}
-								className='flex flex-col gap-y-4 p-8 bg-white border shadow-md rounded-xl w-5/12 border-l-8 border-l-accent transition-transform duration-300 flex-shrink-0'
+								className={`flex flex-col justify-center min-h-full gap-y-4 p-8 bg-white border shadow-md rounded-xl w-2/5  ${
+									index % 2 === 0
+										? 'border-l-8 border-l-accent'
+										: 'border-r-8 border-r-accent'
+								}  transition-transform duration-300 flex-shrink-0`}
 							>
-								<h3 className='text-xl font-semibold text-center text-darkGreen'>
-									{item.title}
-								</h3>
-								<p className='mt-1 text-neutral-600'>{item.text}</p>
+								<div className='flex items-center'>
+									<h3 className='text-xl font-semibold text-center text-darkGreen'>
+										{item.title}
+									</h3>
+								</div>
+								<p className='mt-auto text-black'>{item.text}</p>
 							</motion.div>
 						))}
 					</div>
