@@ -1,8 +1,9 @@
-import { useContext, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
-import faq from '../assets/faq.svg';
-import Dropdown from '../components/Dropdown';
-import { HeaderTextColorContext } from '../components/Header/HeaderContext';
+import Dropdown from "../components/Dropdown";
+import faq from "../assets/faq.svg";
+import Button from "../components/Button";
+import { useContext, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { HeaderTextColorContext } from "../components/Header/HeaderContext";
 
 const dropHeadings = [
 	'Що таке LMS і як вона працює?',
@@ -25,37 +26,55 @@ const dropTexts = [
 ];
 
 export default function FaqSection() {
-	const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
-	const { ref, inView } = useInView({ threshold: 0.95 });
+  const { updateHeaderTextColor } = useContext(HeaderTextColorContext);
+  const { ref, inView } = useInView({ threshold: 0.95 });
 
-	useEffect(() => {
-		if (inView) updateHeaderTextColor('light');
-	}, [inView, updateHeaderTextColor]);
+  useEffect(() => {
+    if (inView) updateHeaderTextColor("dark");
+  }, [inView, updateHeaderTextColor]);
+  return (
+    <section
+      id="faq"
+      className=" py-10 relative bg-darkGreen text-white"
+      ref={ref}
+    >
+      <div className="w-[400px] h-[400px] rounded-full z-10 opacity-10 bg-accent absolute -bottom-[100px]  -left-[100px]"></div>
+      <div className="container mx-auto flex flex-col space-y-4">
+        <h2 className="text-4xl mb-7 font-semibold text-center">
+          Часті запитання про нашу платформу
+        </h2>
+        <div className="flex w-full lg:flex-row flex-col mx-auto justify-center gap-5">
+          {/* FIRST COLUMN */}
+          <div className="w-full lg:w-1/2">
+            {dropHeadings.map((heading, index) => (
+              <Dropdown heading={heading} text={dropTexts[index]} key={index} />
+            ))}
+          </div>
 
-	return (
-		<section
-			ref={ref}
-			id='faq'
-			className='bg-primaryLight text-black py-10 scroll-my-20'
-		>
-			<div className='container mx-auto'>
-				<h2 className='text-4xl mb-7 font-semibold text-center'>
-					Часті запитання про нашу платформу
-				</h2>
-				<div className='flex w-full lg:flex-row flex-col mx-auto justify-center gap-5'>
-					{/* FIRST COLUMN */}
-					<div className='w-full lg:w-1/2'>
-						{dropHeadings.map((heading, index) => (
-							<Dropdown heading={heading} text={dropTexts[index]} key={index} />
-						))}
-					</div>
-
-					{/* SECOND COLUMN */}
-					<div className='w-full hidden lg:flex lg:w-1/2 items-center justify-center'>
-						<img src={faq} alt='faq image' className='max-w-[600px]' />
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+          {/* SECOND COLUMN */}
+          <div className="w-full hidden lg:flex lg:w-1/2 items-center justify-center">
+            <img src={faq} alt="faq image" className="max-w-[500px]" />
+          </div>
+        </div>
+        {/* Help */}
+        <div className="flex flex-col justify-center items-center space-y-2 ">
+          <h3 className="text-3xl mb-7 font-semibold text-center relative">
+            Не знайшли відповідь на своє питання?
+            <div className="w-16 h-16 rounded-full z-10 opacity-45 bg-accent blur-md absolute top-0 left-0"></div>
+            <div className="w-16 h-16 rounded-full z-10 opacity-45 bg-accent blur-xl absolute bottom-0 right-0"></div>
+          </h3>
+          <p className="text-lg text-center mb-2">
+            Звертайтеся до нашої служби підтримки, і ми з радістю вам
+            допоможемо!
+          </p>
+          <Button
+            children="Написати нам"
+            type="colorful"
+            size="medium"
+            isHeader={true}
+          />
+        </div>
+      </div>
+    </section>
+  );
 }

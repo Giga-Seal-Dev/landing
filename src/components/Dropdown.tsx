@@ -11,9 +11,15 @@ export default function Dropdown({ heading, text }: dropdownProps) {
   const [active, setActive] = useState(false);
 
   return (
-    <div className="w-full flex flex-col justify-between p-4 border-b border-gray-300">
-      <div
-        className="flex w-full justify-between items-center cursor-pointer"
+
+    <div className="w-full flex flex-col justify-between p-4 border-b border-gray-300 ">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className={`flex w-full justify-between items-center cursor-pointer hover:text-accent ${
+          active ? "text-accent" : "text-white"
+        }`}
+
         onClick={() => setActive(!active)}
       >
         <h3 className="text-lg font-medium">{heading}</h3>
@@ -26,7 +32,7 @@ export default function Dropdown({ heading, text }: dropdownProps) {
             <FaPlus className="text-2xl text-accent" />
           </motion.div>
         )}
-      </div>
+      </motion.div>
 
       <div
         className={`mt-2 transition-all duration-300 ${
@@ -35,7 +41,7 @@ export default function Dropdown({ heading, text }: dropdownProps) {
             : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <p className="text-gray-700">{text}</p>
+        <p className="text-white">{text}</p>
       </div>
     </div>
   );
