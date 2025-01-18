@@ -24,7 +24,7 @@ export default function IntegrationsTile({
 			onMouseLeave={mouseLeaveHandler}
 		>
 			<div
-				className={`w-32 h-32 flex justify-center items-center text-center shadow-lg rounded-xl relative after:w-full after:h-full after:rounded-xl after:absolute after:top-0 after:left-0 after:bg-primaryLight after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300`}
+				className={`w-32 h-32 flex justify-center items-center text-center shadow-2xl rounded-xl relative bg-primaryLight after:w-full after:h-full after:rounded-xl after:absolute after:top-0 after:left-0 after:bg-primaryLight after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-300`}
 			>
 				<img src={icon} className='w-5/6' />
 				{
