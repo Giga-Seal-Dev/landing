@@ -78,13 +78,13 @@ export default function FeaturesSection() {
 								initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.6 }}
-								className={`flex flex-col justify-center min-h-full gap-y-4 p-8 bg-white border shadow-md rounded-xl w-2/5  ${
+								className={`flex flex-col gap-y-4 p-8 bg-white border shadow-md rounded-xl w-5/12  ${
 									index % 2 === 0
 										? 'border-l-8 border-l-accent'
 										: 'border-r-8 border-r-accent'
-								}  transition-transform duration-300 flex-shrink-0`}
+								}`}
 							>
-								<div className='flex items-center'>
+								<div className='flex items-center justify-center h-12'>
 									<h3 className='text-xl font-semibold text-center text-darkGreen'>
 										{item.title}
 									</h3>
