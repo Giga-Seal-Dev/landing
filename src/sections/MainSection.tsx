@@ -9,7 +9,7 @@ export default function MainSection() {
 			<div className='w-[200px] h-[200px] rounded-full z-10 opacity-25 bg-accent blur-md absolute top-1/3 left-1/3'></div>
 			<div className='w-[200px] h-[200px] rounded-full z-10 opacity-25 bg-accent blur-md absolute bottom-1/3 right-1/3'></div>
 
-			<div className='flex flex-col md:flex-row md:container min-mobile:px-10 items-center self-center justify-between md:h-screen min-mobile:py-32 '>
+			<div className='flex flex-col md:flex-row md:container min-mobile:px-10 items-center self-center justify-between md:h-screen min-mobile:py-32 z-20'>
 				<div className='flex flex-col w-full md:w-1/2 space-y-5'>
 					<motion.h1
 						transition={{ duration: 0.6, delay: 0 }}

@@ -12,7 +12,7 @@ export default function Button({
 	link = '#',
 }: PropsType) {
 	return (
-		<div className='relative group'>
+		<div className='relative group z-20'>
 			<a href={link} className='inline-block'>
 				<button
 					className={`rounded-full px-6 py-2 font-semibold text-lg transition-all duration-300  hover:scale-105 text-white
