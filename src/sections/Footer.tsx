@@ -10,9 +10,9 @@ import { IoSend } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-darkGreen py-8 text-gray-300 text-sm relative">
-      <div className="container mx-auto flex justify-between">
-        <div className="flex justify-center items-center flex-col space-y-4">
+    <footer className="w-full bg-darkGreen py-8 text-gray-300 text-sm relative border-t-[1px] border-green">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between space-x-4 space-y-8 md:space-y-0">
+        <div className="flex justify-start lg:justify-center items-center flex-col space-y-4">
           <motion.img
             src={logo}
             alt="logo"
@@ -20,17 +20,19 @@ export default function Footer() {
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
           />
-          <h3 className="italic">Простота, зручність і результативність</h3>
+          <h3 className="italic text-center">
+            Простота, зручність і результативність
+          </h3>
         </div>
-        <div className="flex flex-col space-y-2">
+        <div className="flex flex-col space-y-2 items-center md:items-start">
           <h3 className="font-semibold">Підписка на розсилку:</h3>
-          <p className="text-center">
+          <p className="text-center md:text-left">
             Отримуйте останні новини нашої платформи.
           </p>
-          <div className="relative w-fit">
+          <div className="relative md:w-fit">
             <input
               type="email"
-              className="rounded-full border-2 text-black px-4 py-2 pr-12 placeholder:text-sm focus:bord"
+              className="rounded-full border-2 text-black px-4 py-2 pr-12 placeholder:text-sm w-full lg:w-auto"
               placeholder="example@gmail.com"
             />
             <motion.div
@@ -43,7 +45,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-start space-y-2 flex-col">
+        <div className="flex flex-col space-y-2 items-center md:items-start">
           <h3 className="font-semibold">Контакти:</h3>
           <a
             href="mailto:support@example.com"
@@ -60,16 +62,17 @@ export default function Footer() {
             +123 456 7890
           </a>
 
-          <div className="flex space-x-2 items-center">
+          <div className="flex flex-col gap-2 space-x-2 items-center">
             <p>Соціальні мережі:</p>
-
-            <FaLinkedin className="hover:text-white transition cursor-pointer active:text-accent text-3xl" />
-            <FaSquareInstagram className="hover:text-white transition cursor-pointer active:text-accent text-3xl" />
-            <FaFacebookSquare className="hover:text-white transition cursor-pointer active:text-accent text-3xl" />
+            <div className="flex gap-2">
+              <FaLinkedin className="hover:text-white transition cursor-pointer active:text-accent text-3xl" />
+              <FaSquareInstagram className="hover:text-white transition cursor-pointer active:text-accent text-3xl" />
+              <FaFacebookSquare className="hover:text-white transition cursor-pointer active:text-accent text-3xl" />
+            </div>
           </div>
         </div>
-        <div className="flex justify-between flex-col space-y-2">
-          <div className="flex space-y-2 flex-col">
+        <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2 items-center md:items-start">
             <h3 className="font-semibold">Юридична інформація:</h3>
             <a
               href="#"
@@ -92,10 +95,13 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col space-y-2">
-            <p className="text-sm">
+            <p className="text-sm text-center md:text-left">
               © 2024 Repetilum LMS Platform. Усі права захищено.
             </p>
-            <a href="https://storyset.com/people" className="text-xs">
+            <a
+              href="https://storyset.com/people"
+              className="text-xs text-center md:text-left"
+            >
               People illustrations by Storyset
             </a>
           </div>

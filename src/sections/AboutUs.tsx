@@ -37,7 +37,7 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <p className="text-xl text-center ">
+        <p className="text-xl text-balance md:text-center px-4 md:p-0">
           Сучасна платформа, яка поєднує найкращі технології для ефективного
           навчання. Підходить для викладачів, студентів та організацій. Ви
           отримуєте можливість створювати інтерактивні курси, відстежувати
@@ -45,11 +45,11 @@ export default function AboutUs() {
         </p>
         <div className="flex justify-around w-full gap-2">
           {/* FIRST COLUMN */}
-          <div className="flex w-1/2">
+          <div className="hidden md:flex w-1/2">
             <img src={aboutUs} alt="about us image" className="w-full" />
           </div>
           {/* SECOND COLUMN */}
-          <div className="flex w-1/2 flex-col space-y-2 justify-around">
+          <div className="flex w-full md:w-1/2 flex-col space-y-2 justify-around px-4 md:p-0">
             {listHeading.map((heading, index) => {
               return (
                 <motion.div className="flex flex-row items-start gap-5">
