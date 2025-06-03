@@ -1,50 +1,87 @@
-# React + TypeScript + Vite
+# 🎓 LMS Landing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive landing page for a fictional Learning Management System (LMS) platform.  
+This is a **training project** with custom design and layout, built using **React**, **Vite**, and **Tailwind CSS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **React 18**
+- **Vite**
+- **Tailwind CSS**
+- **TypeScript**
+- **Framer Motion** (via `motion`)
+- **React Icons**
+- **React Intersection Observer**
+- **ESLint + TypeScript ESLint**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 📸 Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- 🔥 Custom UI/UX design
+- 📱 Fully responsive layout
+- 🎬 Smooth animations using `motion`
+- 👁️ Scroll-based animations with `react-intersection-observer`
+- ⚙️ Linted and typed for clean, maintainable code
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/your-username/lms-landing.git
+cd lms-landing
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Start development server
+
+```bash
+npm run dev
+```
+
+### 4. Build for production
+
+```bash
+npm run build
+```
+
+### 5. Preview production build
+
+```bash
+npm run preview
+```
+
+---
+
+## ⚙️ Scripts
+
+| Command         | Description                  |
+|-----------------|------------------------------|
+| `npm run dev`   | Start development server     |
+| `npm run build` | Build app for production     |
+| `npm run preview` | Preview production build |
+| `npm run lint`  | Run ESLint on all files      |
+
+---
+
+## 📌 Status
+
+This is a **training/demo project**.  
+Design and features are created from scratch for learning purposes.
+
+---
+
+## 📃 License
+
+This project is for educational purposes. You can reuse parts of it in your own learning projects.
+
